@@ -1,0 +1,9 @@
+MONGO_URI = "mongodb://host.docker.internal:27017/rentahouse01"
+PORT = 3001
+MODE = "DEVELOPMENT"
+JWT_SECRETKEY = "Sergio"
+CLIENT_URL=http://localhost:3000
+STRIPE_SECRET_KEY = "your key"
+STRIPE_WEBHOOK_SECRET = "your secret"
+OPENAI_API_KEY='your key'
+OPENROUTER_API_KEY = "your key"

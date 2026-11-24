@@ -1,0 +1,295 @@
+/* FILE: app/components/ai/AiChatWidget.module.css */
+.root {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 2147483647 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.launcherBtn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 55%, #0ea5e9 100%);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow:
+    0 12px 28px -6px rgba(15, 23, 42, 0.45),
+    0 4px 12px -2px rgba(29, 78, 216, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.launcherBtn:hover {
+  transform: translateY(-2px) scale(1.04);
+  filter: brightness(1.06);
+  box-shadow:
+    0 16px 32px -6px rgba(15, 23, 42, 0.52),
+    0 6px 16px -2px rgba(14, 165, 233, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.launcherBtn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.launcherBtn:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+.statusDot {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 13px;
+  height: 13px;
+  border-radius: 9999px;
+  background-color: #22c55e;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.35);
+}
+
+.panel {
+  width: 390px;
+  max-width: calc(100vw - 32px);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow:
+    0 24px 48px -12px rgba(15, 23, 42, 0.28),
+    0 8px 20px -6px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  animation: panelPopIn 0.18s ease-out;
+}
+
+@keyframes panelPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: #ffffff;
+}
+
+.headerTitleWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerBadge {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.headerSubtitle {
+  font-size: 0.72rem;
+  color: #cbd5e1;
+  line-height: 1.2;
+}
+
+.minimizeBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background-color 0.15s ease;
+}
+
+.minimizeBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.body {
+  padding: 12px;
+}
+
+.messagesBox {
+  height: 245px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px;
+  background: #f8fafc;
+  margin-bottom: 10px;
+}
+
+.emptyHint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.messageRowUser {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.messageRowAssistant {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.bubbleUser {
+  max-width: 82%;
+  padding: 7px 11px;
+  border-radius: 12px 12px 2px 12px;
+  background: #1d4ed8;
+  color: #ffffff;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.bubbleAssistant {
+  max-width: 85%;
+  padding: 7px 11px;
+  border-radius: 12px 12px 12px 2px;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.bookingBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  color: #14532d;
+  font-size: 0.78rem;
+}
+
+.bookingText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.approvalCard {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #fef9c3;
+  border: 1px solid #fde047;
+  color: #713f12;
+  font-size: 0.78rem;
+}
+
+.approvalTitle {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.approvalPre {
+  max-height: 110px;
+  overflow: auto;
+  margin: 0 0 8px 0;
+  padding: 8px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #0f172a;
+  font-size: 0.72rem;
+}
+
+.approvalActions {
+  display: flex;
+  gap: 8px;
+}
+
+.inputForm {
+  display: flex;
+  gap: 8px;
+}
+
+.textInput {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 7px 10px;
+  font-size: 0.82rem;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.sendBtn {
+  border: none;
+  border-radius: 10px;
+  padding: 7px 14px;
+  background: #1d4ed8;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: #1e40af;
+}
+
+.sendBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

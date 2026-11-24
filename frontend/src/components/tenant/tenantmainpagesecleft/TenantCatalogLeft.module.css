@@ -1,0 +1,291 @@
+/* Flexible Section Column Containers */
+.flex-column-container {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Width Allocation Balance */
+.catalog-card-panel {
+    flex: 1.8; /* Expands to give catalog list more horizontal canvas */
+}
+
+.rented-card-panel {
+    flex: 1.2;
+}
+
+.container-title-bar h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    border-left: 4px solid #6366f1;
+    padding-left: 12px;
+}
+
+/* Scrollable Viewport with constraints up to the end of the container limits */
+.scrollable-cards-viewport {
+    max-height: 720px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Vertical Scrollbar Custom Styling Design */
+.scrollable-cards-viewport::-webkit-scrollbar {
+    width: 6px;
+}
+.scrollable-cards-viewport::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+.scrollable-cards-viewport::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+.scrollable-cards-viewport::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+}
+
+/* Grid Layout Spec Constraints: 3 houses/line max */
+.cards-responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.singles-column {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+/* Card Element Blocks Design */
+.property-item-card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 25em;
+}
+
+.property-item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(0,0,0,0.4);
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 160px;
+    width: 100%;
+    background-color: #0f172a;
+    margin-bottom: 8%;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Status Labels Positioning Context */
+.badge-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.status-vacant { background-color: #22c55e; color: #ffffff; }
+.status-booked { background-color: #3b82f6; color: #ffffff; }
+
+.card-body-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.house-identity-code {
+    color: #f8fafc;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.rent-price-tag {
+    color: #38bdf8;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.location-geography {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin: 0 0 12px 0;
+}
+
+.structural-amenities {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.04);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/* Action Buttons Implementations */
+.btn-action {
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-rent {
+    background-color: #6366f1;
+    color: #ffffff;
+}
+.btn-rent:hover { background-color: #4f46e5; }
+
+.btn-maintenance {
+    background-color: #f59e0b;
+    color: #1e293b;
+}
+.btn-maintenance:hover { background-color: #d97706; }
+
+/* Dev Spec Anchors */
+.developer-spec-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.78rem;
+}
+
+.lnk-spec {
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.lnk-edit { color: #a5b4fc; }
+.lnk-edit:hover { color: #c7d2fe; }
+.lnk-drop { color: #f87171; }
+.lnk-drop:hover { color: #fca5a5; }
+
+/* Pagination Controls Layout Rules */
+.pagination-footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-nav-page {
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+.btn-nav-page:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.page-indicator-counter {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.empty-state-fallback {
+    color: #cbd5e1;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (CSS3 Media Rules for Fluid Layout Responsiveness)
+   ========================================================================== */
+
+/* Split Screens Viewports - Shrinking layouts to double cards arrangement rules */
+@media (max-width: 1400px) {
+    .cards-responsive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Laptop Small/Tablets Transition Layer: Break flex-row into block stacks */
+@media (max-width: 1024px) {
+    .workspace-flex-grid {
+        flex-direction: column;
+    }
+    .catalog-card-panel, .rented-card-panel {
+        width: 100%;
+        flex: none;
+    }
+    .cards-responsive-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .singles-column {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Devices Structural Collapse Rules */
+@media (max-width: 768px) {
+    .cards-responsive-grid, .singles-column {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .dashboard-header-panel h1 {
+        font-size: 2rem;
+    }
+    .blur-overlay {
+        padding: 15px;
+    }
+}
+
+/* ==========================================================================
+    SEARCH TOOLS (CSS3 Media Rules for Fluid Layout Responsiveness)
+   ========================================================================== */
+
+   .search-toolbar {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: white;
+}
+@media (max-width: 768px) {
+    .search-toolbar { flex-direction: column; }
+}

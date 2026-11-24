@@ -1,0 +1,198 @@
+/* ==========================================================
+   Split column layout
+   ========================================================== */
+.splitColumn {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+.housesColumn {
+  flex: 3;
+}
+
+/* ==========================================================
+   Header
+   ========================================================== */
+.columnHeaderSticky {
+  margin-bottom: 20px;
+}
+.columnTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+/* ==========================================================
+   Scroll container
+   ========================================================== */
+.scrollContainerVertical {
+  overflow-y: auto;
+  padding-right: 8px;
+}
+.housesScrollBox {
+  max-height: 580px;
+}
+.scrollContainerVertical::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollContainerVertical::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.scrollContainerVertical::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+.scrollContainerVertical::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================================
+   Grid + card
+   ========================================================== */
+.housesFlexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.housePremiumCard {
+  flex: 0 0 calc(33.333% - 11px);
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+.housePremiumCard:hover {
+  border-color: rgba(217, 70, 239, 0.3);
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.houseImgContainer {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+.houseImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.housePremiumCard:hover .houseImg {
+  transform: scale(1.04);
+}
+
+/* ==========================================================
+   Badge (booked / available)
+   ========================================================== */
+.badgeBookingStatus {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.statusBooked    { background-color: #ef4444; color: #ffffff; }
+.statusAvailable { background-color: #22c55e; color: #ffffff; }
+
+/* ==========================================================
+   Card body
+   ========================================================== */
+.houseCardBody {
+  padding: 14px;
+}
+.houseCode {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.housePrice {
+  font-weight: 700;
+  color: #d946ef;
+  font-size: 1rem;
+}
+.houseLocation {
+  font-size: 0.8rem;
+}
+
+/* ==========================================================
+   Pagination
+   ========================================================== */
+.customPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.btnPag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+.btnPag:hover:not(:disabled) {
+  background: #d946ef;
+  border-color: #d946ef;
+}
+.btnPag:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.pagText {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* ==========================================================
+   Fade-in animation
+   ========================================================== */
+.animateFadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+@media (max-width: 1100px) {
+  .splitColumn {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .housePremiumCard {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+
+@media (max-width: 520px) {
+  .housePremiumCard {
+    flex: 0 0 100%;
+  }
+}

@@ -1,0 +1,160 @@
+/* ==========================================================
+   Wrapper
+   ========================================================== */
+.profileWrapper {
+  min-height: 100vh;
+  padding: 40px;
+  background: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750') fixed center/cover;
+}
+
+.pageTitle {
+  color: #d946ef;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.headerContainer { /* marker */ }
+.userPreview    { /* marker */ }
+.actions        { /* marker */ }
+.previewBox     { /* marker */ }
+
+/* ==========================================================
+   Content layout
+   ========================================================== */
+.profileContent {
+  display: flex;
+  gap: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: white;
+}
+
+.profileForm {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.passwordForm {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.houseVisual {
+  flex: 1;
+  background: url('/images/userprofile/besideimageUserProfile.jpg') fixed center/cover;
+  border-radius: 15px;
+}
+
+/* ==========================================================
+   Image previews
+   ========================================================== */
+.profileThumb,
+.newThumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+.btnSave {
+  background: #d946ef;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.btnSave:hover:not(:disabled) {
+  background: #c026d3;
+  transform: translateY(-1px);
+}
+.btnSave:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnPass {
+  background: #475569;
+  color: white;
+}
+.btnPass:hover:not(:disabled) {
+  background: #334155;
+}
+
+/* ==========================================================
+   Inputs (scoped to this component)
+   ========================================================== */
+.profileWrapper :global(input),
+.profileWrapper :global(textarea),
+.profileWrapper :global(select) {
+  padding: 12px 16px;
+  background: rgba(133, 134, 136, 0.6);
+  border: 1px solid rgba(248, 244, 244, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+.profileWrapper :global(input:focus),
+.profileWrapper :global(textarea:focus),
+.profileWrapper :global(select:focus) {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* ==========================================================
+   Toast Banner (replaces ToastrService)
+   ========================================================== */
+.toastBanner {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+.toastSuccess { background-color: #22c55e; color: #ffffff; }
+.toastError   { background-color: #ef4444; color: #ffffff; }
+
+/* ==========================================================
+   Media Queries
+   ========================================================== */
+@media (max-width: 768px) {
+  .profileContent {
+    flex-direction: column;
+  }
+  .passwordForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .formGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,314 @@
+/* ==========================================================
+   Flexible Section Column Containers
+   ========================================================== */
+.flexColumnContainer {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.catalogCardPanel { flex: 1.8; }
+.rentedCardPanel  { flex: 1.2; }
+
+/* ==========================================================
+   Title Bar
+   ========================================================== */
+.containerTitleBar h2 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  border-left: 4px solid #6366f1;
+  padding-left: 12px;
+}
+
+/* ==========================================================
+   Scrollable Viewport
+   ========================================================== */
+.scrollableCardsViewport {
+  max-height: 720px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+.scrollableCardsViewport::-webkit-scrollbar { width: 6px; }
+.scrollableCardsViewport::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+.scrollableCardsViewport::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.scrollableCardsViewport::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* ==========================================================
+   Grid (flex-column stack)
+   ========================================================== */
+.cardsResponsiveGrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 100%;
+}
+.singlesColumn { /* inherits column stack */ }
+
+/* ==========================================================
+   Card
+   ========================================================== */
+.propertyItemCard {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 28em;
+  height: 100%;
+}
+.propertyItemCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.4);
+}
+
+.cardImageWrapper {
+  position: relative;
+  height: 160px;
+  width: 100%;
+  background-color: #0f172a;
+}
+.cardImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================
+   Badges
+   ========================================================== */
+.badgeStatus {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.statusVacant { background-color: #22c55e; color: #ffffff; }
+.statusBooked { background-color: #3b82f6; color: #ffffff; }
+
+/* ==========================================================
+   Card Body
+   ========================================================== */
+.cardBodyContent {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.cardRowHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.cardActionFooter {
+  margin-top: -0.8em;
+}
+.houseIdentityCode {
+  color: #f8fafc;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+.rentPriceTag {
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.locationGeography {
+  color: white;
+  font-size: 0.85rem;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+.structuralAmenities {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  margin-top: -0.9em;
+}
+
+/* ==========================================================
+   Action Buttons
+   ========================================================== */
+.btnAction {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btnGeneral {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btnMantRequest {
+  width: 11em !important;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-right: 4px;
+  background-color: #f59e0b;
+  color: #1e293b;
+  margin-top: -2em;
+  margin-bottom: 2em;
+}
+.btnRent { background-color: #6366f1; color: #ffffff; }
+.btnRent:hover { background-color: #4f46e5; }
+.btnMaintenance { background-color: #f59e0b; color: #1e293b; }
+.btnMaintenance:hover { background-color: #d97706; }
+
+/* ==========================================================
+   Pagination
+   ========================================================== */
+.paginationFooterWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.btnNavPage {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.btnNavPage:disabled { opacity: 0.4; cursor: not-allowed; }
+.pageIndicatorCounter { color: #94a3b8; font-size: 0.85rem; }
+
+.emptyStateFallback {
+  color: #cbd5e1;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ==========================================================
+   Row helpers
+   ========================================================== */
+.movetoleftdirection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.sectionButtonsChangeMaintReqStatus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ==========================================================
+   Search Tools
+   ========================================================== */
+.searchToolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.searchInput {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+/* ==========================================================
+   Toast Banner (replaces ToastrService)
+   ========================================================== */
+.toastBanner {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+.toastSuccess { background-color: #22c55e; color: #ffffff; }
+.toastError   { background-color: #ef4444; color: #ffffff; }
+
+/* ==========================================================
+   Media Queries
+   ========================================================== */
+@media (max-width: 1400px) {
+  .cardsResponsiveGrid { /* flex-based */ }
+}
+
+@media (max-width: 1024px) {
+  .flexColumnContainer { margin-left: -2em; }
+  .scrollableCardsViewport { margin-left: -2em; }
+  .propertyItemCard { height: 30em; }
+  .catalogCardPanel,
+  .rentedCardPanel { width: 100%; flex: none; }
+
+  .movetoleftdirection {
+    flex-direction: column;
+    justify-content: left;
+    align-items: stretch;
+    margin-left: -15em;
+  }
+  .sectionButtonsChangeMaintReqStatus {
+    flex-direction: column;
+    justify-content: left;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsResponsiveGrid,
+  .singlesColumn { grid-template-columns: repeat(1, 1fr); }
+  .dashboardHeaderPanel h1 { font-size: 2rem; }
+  .blurOverlay { padding: 15px; }
+  .searchToolbar { flex-direction: column; }
+}

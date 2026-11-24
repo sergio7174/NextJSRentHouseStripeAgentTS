@@ -1,0 +1,195 @@
+/* ==========================================================
+   Wrapper
+   ========================================================== */
+.tenantAccountWrapper {
+  min-height: 100vh;
+  min-width: 130%;
+  min-width: 90%;
+  background: url('/images/tenant/tenantbackground.jpg') no-repeat center/cover;
+  color: white;
+  padding: 40px;
+}
+
+/* ==========================================================
+   Blur overlay
+   ========================================================== */
+.blurOverlay {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+/* ==========================================================
+   Account header
+   ========================================================== */
+.accountHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* ==========================================================
+   Financial summary
+   ========================================================== */
+.financialSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 16px 20px;
+}
+.statCard h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+/* ==========================================================
+   Table viewport + table
+   ========================================================== */
+.tableViewport {
+  overflow-y: auto;
+  max-height: 400px;
+  margin-bottom: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.accountTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.accountTable th,
+.accountTable td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  color: #e2e8f0;
+}
+.accountTable th {
+  color: #cbd5e1;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.statusBadge {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #374151;
+  color: #e2e8f0;
+  font-size: 0.8rem;
+}
+
+/* ==========================================================
+   Buttons
+   ========================================================== */
+.btnPrimary {
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+}
+.btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.6);
+}
+
+.btnPage {
+  min-width: 90px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btnPage:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: #6366f1;
+}
+.btnPage:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ==========================================================
+   Pagination row
+   ========================================================== */
+.paginationRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.paginationStatus {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  padding: 0 12px;
+}
+
+/* ==========================================================
+   Empty state
+   ========================================================== */
+.emptyState {
+  width: 100%;
+  text-align: center;
+  padding: 50px 0;
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+/* ==========================================================
+   Toast banner
+   ========================================================== */
+.toastBanner {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+.toastSuccess { background-color: #22c55e; color: #ffffff; }
+.toastError   { background-color: #ef4444; color: #ffffff; }
+
+/* ==========================================================
+   Media queries
+   ========================================================== */
+@media (max-width: 1024px) {
+  .accountHeader {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .tenantAccountWrapper {
+    min-width: 100%;
+    padding: 20px;
+  }
+}

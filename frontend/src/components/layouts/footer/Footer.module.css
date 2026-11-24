@@ -1,0 +1,47 @@
+.footer {
+  background-color: #303441;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.logo {
+  width: 3em;
+  height: 3em;
+  object-fit: contain;
+}
+
+.sectionTitle {
+  color: #fff;
+  display: inline-block;
+  border-bottom: 3px solid #274abb;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.footerLink {
+  color: #adb5bd;
+  text-decoration: none;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: #fff;
+}
+
+.socialLink {
+  color: #fff;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.socialLink:hover {
+  color: #44bcdd;
+  transform: translateY(-2px);
+}
+
+.footerBottom {
+  border-top: 1px solid #424756;
+}

@@ -1,0 +1,349 @@
+/* ==========================================================
+   Page wrapper + overlay
+   ========================================================== */
+.adminDashboardWrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: url('/images/adminlist-houses/adminlist-houses.avif') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.65);
+  z-index: 1;
+}
+
+/* ==========================================================
+   Main container
+   ========================================================== */
+.mainContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1500px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   Header
+   ========================================================== */
+.dashboardHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+.dashboardHeader h1 {
+  color: #0f172a;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 auto;
+  padding-bottom: 0.85rem;
+  position: relative;
+}
+.dashboardHeader h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #4f46e5, transparent);
+  border-radius: 2px;
+}
+
+/* ==========================================================
+   Search panel
+   ========================================================== */
+.searchPanel {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.searchGrid {
+  display: flex;
+  gap: 2rem;
+}
+.formGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.formGroup label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.formGroup input,
+.formGroup select {
+  padding: 0.8rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.formGroup input:focus,
+.formGroup select:focus {
+  border-color: #4f46e5;
+}
+
+/* ==========================================================
+   Table scroll container
+   ========================================================== */
+.tableScrollContainer {
+  max-height: 580px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  width: 100%;
+}
+
+.modernFlexTable {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.95rem;
+  min-width: 1200px;
+}
+
+.modernFlexTable th {
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 1.25rem 1rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #e2e8f0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.modernFlexTable td {
+  padding: 1.1rem 1rem;
+  border-bottom: 1px solid #f8fafc;
+  color: #334155;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.modernFlexTable tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+.modernFlexTable tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* ==========================================================
+   Cell content modifiers
+   ========================================================== */
+.cellAvatarWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.cellAvatarWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.boldTextCell {
+  font-weight: 600;
+  color: #0f172a;
+}
+.highlightCodeCell {
+  font-weight: 700;
+  color: #4f46e5;
+}
+.numericCell {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+}
+.totalAmountHighlight {
+  color: #16a34a;
+  font-size: 1rem;
+}
+
+/* ==========================================================
+   Role badges
+   ========================================================== */
+.roleBadge {
+  display: inline-flex;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.owner {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+.tenant {
+  background: #faf5ff;
+  color: #7c3aed;
+  border: 1px solid #e9d5ff;
+}
+
+/* ==========================================================
+   Action buttons
+   ========================================================== */
+.actionBtnGroup {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.btnAction {
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+}
+.btnEdit {
+  background: #ffffff;
+  color: #0ea5e9;
+  border: 1px solid #bae6fd;
+}
+.btnEdit:hover {
+  background: #0ea5e9;
+  color: #ffffff;
+  border-color: #0ea5e9;
+}
+.btnDelete {
+  background: #ffffff;
+  color: #ef4444;
+  border: 1px solid #fca5a5;
+}
+.btnDelete:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.noRecords {
+  text-align: center;
+  padding: 4rem !important;
+  font-style: italic;
+  color: #64748b;
+}
+
+/* ==========================================================
+   Pagination
+   ========================================================== */
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: auto;
+}
+.btnPage {
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btnPage:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+.pageInfo {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+@media (max-width: 1024px) {
+  .adminDashboardWrapper {
+    padding: 2rem 1rem;
+  }
+  .mainContainer {
+    padding: 1.75rem;
+    gap: 1.5rem;
+  }
+  .dashboardHeader h1 {
+    font-size: 2.1rem;
+  }
+  .modernFlexTable {
+    min-width: 1100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .adminDashboardWrapper {
+    padding: 1rem 0.5rem;
+  }
+  .mainContainer {
+    padding: 1.25rem;
+  }
+  .dashboardHeader h1 {
+    font-size: 1.75rem;
+  }
+  .searchGrid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .modernFlexTable {
+    min-width: 1000px;
+  }
+  .modernFlexTable th,
+  .modernFlexTable td {
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
