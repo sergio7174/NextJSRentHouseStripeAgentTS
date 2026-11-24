@@ -43,6 +43,9 @@ jobs:
   frontend-ci:
     name: Frontend Lint & Production Build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
 
     steps:
       - name: Checkout repository
